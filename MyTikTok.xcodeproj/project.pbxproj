@@ -35,6 +35,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		527E4D6A28A560A600D514F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52AF813C28A5534900A47290 /* AppDelegate.swift */,
+				52AF813E28A5534900A47290 /* SceneDelegate.swift */,
+				52AF814528A5534B00A47290 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		527E4D6B28A560D700D514F3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				52AF814028A5534900A47290 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		527E4D6C28A560ED00D514F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				52AF814728A5534B00A47290 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		527E4D6D28A562C000D514F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		527E4D6E28A562D300D514F3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		527E4D6F28A562F600D514F3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		52AF813028A5534900A47290 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +101,13 @@
 		52AF813B28A5534900A47290 /* MyTikTok */ = {
 			isa = PBXGroup;
 			children = (
-				52AF813C28A5534900A47290 /* AppDelegate.swift */,
-				52AF813E28A5534900A47290 /* SceneDelegate.swift */,
-				52AF814028A5534900A47290 /* ViewController.swift */,
-				52AF814528A5534B00A47290 /* Assets.xcassets */,
-				52AF814728A5534B00A47290 /* LaunchScreen.storyboard */,
+				527E4D6B28A560D700D514F3 /* Controllers */,
 				52AF814A28A5534B00A47290 /* Info.plist */,
+				527E4D6F28A562F600D514F3 /* Managers */,
+				527E4D6D28A562C000D514F3 /* Models */,
+				527E4D6A28A560A600D514F3 /* Resources */,
+				527E4D6E28A562D300D514F3 /* ViewModels */,
+				527E4D6C28A560ED00D514F3 /* Views */,
 			);
 			path = MyTikTok;
 			sourceTree = "<group>";
