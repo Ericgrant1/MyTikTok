@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2241B955B43FA7E73B8D3158 /* Pods_MyTikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F461D3C5F236E08C2FE7BA2 /* Pods_MyTikTok.framework */; };
+		524430F028A6AD1F00ED1D5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524430EF28A6AD1F00ED1D5A /* GoogleService-Info.plist */; };
 		527839B828A5688900002C82 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839B728A5688900002C82 /* ExploreViewController.swift */; };
 		527839BA28A568AB00002C82 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839B928A568AB00002C82 /* CameraViewController.swift */; };
 		527839BC28A568DA00002C82 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839BB28A568DA00002C82 /* NotificationsViewController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		0F461D3C5F236E08C2FE7BA2 /* Pods_MyTikTok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTikTok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		524430EF28A6AD1F00ED1D5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		527839B728A5688900002C82 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		527839B928A568AB00002C82 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		527839BB28A568DA00002C82 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +86,6 @@
 				CC3052DB4026AB0C49194DC0 /* Pods-MyTikTok.debug.xcconfig */,
 				FF8F16D3932885207C5F5CB2 /* Pods-MyTikTok.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,6 +135,7 @@
 				52AF813C28A5534900A47290 /* AppDelegate.swift */,
 				52AF813E28A5534900A47290 /* SceneDelegate.swift */,
 				52AF814528A5534B00A47290 /* Assets.xcassets */,
+				524430EF28A6AD1F00ED1D5A /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -225,6 +227,7 @@
 				52AF813528A5534900A47290 /* Sources */,
 				52AF813628A5534900A47290 /* Frameworks */,
 				52AF813728A5534900A47290 /* Resources */,
+				4B4C2356B14D39F095B9DDD8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,12 +278,30 @@
 			files = (
 				52AF814928A5534B00A47290 /* LaunchScreen.storyboard in Resources */,
 				52AF814628A5534B00A47290 /* Assets.xcassets in Resources */,
+				524430F028A6AD1F00ED1D5A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4B4C2356B14D39F095B9DDD8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTikTok/Pods-MyTikTok-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTikTok/Pods-MyTikTok-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTikTok/Pods-MyTikTok-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F6243E5DE6ED9CD1D3C84C2D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
