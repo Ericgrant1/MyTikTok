@@ -228,6 +228,7 @@
 				52AF813628A5534900A47290 /* Frameworks */,
 				52AF813728A5534900A47290 /* Resources */,
 				4B4C2356B14D39F095B9DDD8 /* [CP] Embed Pods Frameworks */,
+				524430F428A6C8DB00ED1D5A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -301,6 +302,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTikTok/Pods-MyTikTok-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		524430F428A6C8DB00ED1D5A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 		F6243E5DE6ED9CD1D3C84C2D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
