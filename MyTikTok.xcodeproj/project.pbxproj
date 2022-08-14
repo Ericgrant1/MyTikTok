@@ -19,7 +19,6 @@
 		527839C628A5698A00002C82 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839C528A5698A00002C82 /* SettingsViewController.swift */; };
 		527839C828A569C800002C82 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839C728A569C800002C82 /* TabBarViewController.swift */; };
 		527839CC28A56A7A00002C82 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839CB28A56A7A00002C82 /* PostViewController.swift */; };
-		527839CE28A56AAC00002C82 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839CD28A56AAC00002C82 /* APICaller.swift */; };
 		527839D028A56AD400002C82 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839CF28A56AD400002C82 /* StorageManager.swift */; };
 		527839D228A56B3200002C82 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839D128A56B3200002C82 /* DatabaseManager.swift */; };
 		527839D428A56B4C00002C82 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839D328A56B4C00002C82 /* AuthenticationManager.swift */; };
@@ -44,7 +43,6 @@
 		527839C528A5698A00002C82 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		527839C728A569C800002C82 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		527839CB28A56A7A00002C82 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		527839CD28A56AAC00002C82 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		527839CF28A56AD400002C82 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		527839D128A56B3200002C82 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		527839D328A56B4C00002C82 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -175,11 +173,10 @@
 		527E4D6F28A562F600D514F3 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				527839CD28A56AAC00002C82 /* APICaller.swift */,
-				527839CF28A56AD400002C82 /* StorageManager.swift */,
-				527839D128A56B3200002C82 /* DatabaseManager.swift */,
 				527839D328A56B4C00002C82 /* AuthenticationManager.swift */,
+				527839D128A56B3200002C82 /* DatabaseManager.swift */,
 				527839D528A56BDF00002C82 /* HapticsManager.swift */,
+				527839CF28A56AD400002C82 /* StorageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -354,7 +351,6 @@
 				527839B828A5688900002C82 /* ExploreViewController.swift in Sources */,
 				527839C028A5692900002C82 /* UserListViewController.swift in Sources */,
 				527839C628A5698A00002C82 /* SettingsViewController.swift in Sources */,
-				527839CE28A56AAC00002C82 /* APICaller.swift in Sources */,
 				527839CC28A56A7A00002C82 /* PostViewController.swift in Sources */,
 				527839BA28A568AB00002C82 /* CameraViewController.swift in Sources */,
 				527839C828A569C800002C82 /* TabBarViewController.swift in Sources */,
