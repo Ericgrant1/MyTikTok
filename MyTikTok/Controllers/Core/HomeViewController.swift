@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
         let scrollView = UIScrollView()
         scrollView.bounces = false
         scrollView.backgroundColor = .red
+        scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
@@ -35,8 +36,45 @@ class HomeViewController: UIViewController {
     // Private
 
     private func setUpFeed() {
+        horizontalScroleView.contentSize = CGSize(width: view.width * 2, height: view.height)
+        setUpFollowingFeed()
+    }
+    
+    func setUpFollowingFeed() {
+        let pagingController = UIPageViewController(
+            transitionStyle: .scroll,
+            navigationOrientation: .vertical,
+            options: [:]
+        )
         
+        let vc = UIViewController()
+        vc.view.backgroundColor = .blue
+        
+        pagingController.setViewControllers(
+            [vc],
+            direction: .forward,
+            animated: false,
+            completion: nil
+        )
+        pagingController.dataSource = self
+        
+        horizontalScroleView.addSubview(pagingController.view)
+        pagingController.view.frame = view.bounds
+        addChild(pagingController)
+        pagingController.didMove(toParent: self)
     }
 
 }
 
+extension HomeViewController: UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        return nil
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let vc = UIViewController()
+        vc.view.backgroundColor = [UIColor.red, UIColor.gray, UIColor.green].randomElement()
+        return vc
+    }
+    
+}
