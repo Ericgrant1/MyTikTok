@@ -17,6 +17,18 @@ class HomeViewController: UIViewController {
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
+    
+    let forYouPageViewController = UIPageViewController(
+        transitionStyle: .scroll,
+        navigationOrientation: .vertical,
+        options: [:]
+    )
+    
+    let followingPageViewController = UIPageViewController(
+        transitionStyle: .scroll,
+        navigationOrientation: .vertical,
+        options: [:]
+    )
 
     // MARK: - Lifecycle
     
@@ -42,61 +54,49 @@ class HomeViewController: UIViewController {
     }
     
     func setUpFollowingFeed() {
-        let pagingController = UIPageViewController(
-            transitionStyle: .scroll,
-            navigationOrientation: .vertical,
-            options: [:]
-        )
-        
         let vc = UIViewController()
         vc.view.backgroundColor = .blue
         
-        pagingController.setViewControllers(
+        followingPageViewController.setViewControllers(
             [vc],
             direction: .forward,
             animated: false,
             completion: nil
         )
-        pagingController.dataSource = self
+        followingPageViewController.dataSource = self
         
-        horizontalScroleView.addSubview(pagingController.view)
-        pagingController.view.frame = CGRect(
+        horizontalScroleView.addSubview(followingPageViewController.view)
+        followingPageViewController.view.frame = CGRect(
             x: 0,
             y: 0,
             width: horizontalScroleView.width,
             height: horizontalScroleView.height
         )
-        addChild(pagingController)
-        pagingController.didMove(toParent: self)
+        addChild(followingPageViewController)
+        followingPageViewController.didMove(toParent: self)
     }
     
     func setUpForYouFeed() {
-        let pagingController = UIPageViewController(
-            transitionStyle: .scroll,
-            navigationOrientation: .vertical,
-            options: [:]
-        )
-        
         let vc = UIViewController()
         vc.view.backgroundColor = .blue
         
-        pagingController.setViewControllers(
+        forYouPageViewController.setViewControllers(
             [vc],
             direction: .forward,
             animated: false,
             completion: nil
         )
-        pagingController.dataSource = self
+        forYouPageViewController.dataSource = self
         
-        horizontalScroleView.addSubview(pagingController.view)
-        pagingController.view.frame = CGRect(
+        horizontalScroleView.addSubview(forYouPageViewController.view)
+        forYouPageViewController.view.frame = CGRect(
             x: view.width,
             y: 0,
             width: horizontalScroleView.width,
             height: horizontalScroleView.height
         )
-        addChild(pagingController)
-        pagingController.didMove(toParent: self)
+        addChild(forYouPageViewController)
+        forYouPageViewController.didMove(toParent: self)
     }
 
 }
