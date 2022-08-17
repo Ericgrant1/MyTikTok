@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
     private func setUpFeed() {
         horizontalScroleView.contentSize = CGSize(width: view.width * 2, height: view.height)
         setUpFollowingFeed()
+        setUpForYouFeed()
     }
     
     func setUpFollowingFeed() {
@@ -59,7 +60,41 @@ class HomeViewController: UIViewController {
         pagingController.dataSource = self
         
         horizontalScroleView.addSubview(pagingController.view)
-        pagingController.view.frame = view.bounds
+        pagingController.view.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: horizontalScroleView.width,
+            height: horizontalScroleView.height
+        )
+        addChild(pagingController)
+        pagingController.didMove(toParent: self)
+    }
+    
+    func setUpForYouFeed() {
+        let pagingController = UIPageViewController(
+            transitionStyle: .scroll,
+            navigationOrientation: .vertical,
+            options: [:]
+        )
+        
+        let vc = UIViewController()
+        vc.view.backgroundColor = .blue
+        
+        pagingController.setViewControllers(
+            [vc],
+            direction: .forward,
+            animated: false,
+            completion: nil
+        )
+        pagingController.dataSource = self
+        
+        horizontalScroleView.addSubview(pagingController.view)
+        pagingController.view.frame = CGRect(
+            x: view.width,
+            y: 0,
+            width: horizontalScroleView.width,
+            height: horizontalScroleView.height
+        )
         addChild(pagingController)
         pagingController.didMove(toParent: self)
     }
