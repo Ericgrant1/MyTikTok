@@ -58,11 +58,12 @@ class HomeViewController: UIViewController {
     }
     
     func setUpFollowingFeed() {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .blue
+        guard let model = followingPosts.first else {
+            return
+        }
         
         followingPageViewController.setViewControllers(
-            [vc],
+            [PostViewController(model: model)],
             direction: .forward,
             animated: false,
             completion: nil
@@ -81,11 +82,12 @@ class HomeViewController: UIViewController {
     }
     
     func setUpForYouFeed() {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .blue
+        guard let model = forYouPosts.first else {
+            return
+        }
         
         forYouPageViewController.setViewControllers(
-            [vc],
+            [PostViewController(model: model)],
             direction: .forward,
             animated: false,
             completion: nil
@@ -107,12 +109,43 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return nil
+        guard let fromPost = (viewController as? PostViewController)?.model else {
+            return nil
+        }
+        
+        guard let index = currentPosts.firstIndex(where: {
+            $0.identifier == fromPost.identifier
+        }) else {
+            return nil
+        }
+        
+        if index == 0 {
+            return nil
+        }
+        let priorIndex = index - 1
+        let model = currentPosts[priorIndex]
+        let vc = PostViewController(model: model)
+        return vc
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let vc = UIViewController()
-        vc.view.backgroundColor = [UIColor.red, UIColor.gray, UIColor.green].randomElement()
+        guard let fromPost = (viewController as? PostViewController)?.model else {
+            return nil
+        }
+        
+        guard let index = currentPosts.firstIndex(where: {
+            $0.identifier == fromPost.identifier
+        }) else {
+            return nil
+        }
+        
+        guard index < (currentPosts.count - 1) else {
+            return nil
+        }
+        
+        let newxtIndex = index + 1
+        let model = currentPosts[newxtIndex]
+        let vc = PostViewController(model: model)
         return vc
     }
     
