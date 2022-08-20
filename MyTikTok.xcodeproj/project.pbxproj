@@ -23,6 +23,7 @@
 		527839D228A56B3200002C82 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839D128A56B3200002C82 /* DatabaseManager.swift */; };
 		527839D428A56B4C00002C82 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839D328A56B4C00002C82 /* AuthenticationManager.swift */; };
 		527839D628A56BDF00002C82 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527839D528A56BDF00002C82 /* HapticsManager.swift */; };
+		5296253728B13566009DA46A /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296253628B13566009DA46A /* PostModel.swift */; };
 		52AF813D28A5534900A47290 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF813C28A5534900A47290 /* AppDelegate.swift */; };
 		52AF813F28A5534900A47290 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF813E28A5534900A47290 /* SceneDelegate.swift */; };
 		52AF814128A5534900A47290 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF814028A5534900A47290 /* HomeViewController.swift */; };
@@ -48,6 +49,7 @@
 		527839D128A56B3200002C82 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		527839D328A56B4C00002C82 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		527839D528A56BDF00002C82 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		5296253628B13566009DA46A /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		52AF813928A5534900A47290 /* MyTikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AF813C28A5534900A47290 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AF813E28A5534900A47290 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		527E4D6D28A562C000D514F3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5296253628B13566009DA46A /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				527839D428A56B4C00002C82 /* AuthenticationManager.swift in Sources */,
 				527839BC28A568DA00002C82 /* NotificationsViewController.swift in Sources */,
 				527839C228A5694B00002C82 /* SignInViewController.swift in Sources */,
+				5296253728B13566009DA46A /* PostModel.swift in Sources */,
 				527839BE28A568FD00002C82 /* ProfileViewController.swift in Sources */,
 				527839D028A56AD400002C82 /* StorageManager.swift in Sources */,
 				52AF813D28A5534900A47290 /* AppDelegate.swift in Sources */,

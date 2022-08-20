@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    private let horizontalScroleView: UIScrollView = {
+    let horizontalScroleView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.bounces = false
         scrollView.backgroundColor = .red
@@ -29,6 +29,9 @@ class HomeViewController: UIViewController {
         navigationOrientation: .vertical,
         options: [:]
     )
+    
+    private var forYouPosts = PostModel.mockModels()
+    private var followingPosts = PostModel.mockModels()
 
     // MARK: - Lifecycle
     
@@ -37,6 +40,7 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(horizontalScroleView)
         setUpFeed()
+        horizontalScroleView.contentOffset = CGPoint(x: view.width, y: 0)
     }
     
     override func viewDidLayoutSubviews() {
@@ -110,6 +114,16 @@ extension HomeViewController: UIPageViewControllerDataSource {
         let vc = UIViewController()
         vc.view.backgroundColor = [UIColor.red, UIColor.gray, UIColor.green].randomElement()
         return vc
+    }
+    
+    var currentPosts: [PostModel] {
+        if horizontalScroleView.contentOffset.x == 0 {
+            // Following
+            return followingPosts
+        }
+        
+        // For You
+        return forYouPosts
     }
     
 }
