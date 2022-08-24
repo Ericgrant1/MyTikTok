@@ -11,6 +11,27 @@ class PostViewController: UIViewController {
     
     let model: PostModel
     
+    private let likeButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
+    private let commentButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(systemName: "text.bubble.fill"), for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
+    private let shareButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
     init(model: PostModel) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -26,5 +47,22 @@ class PostViewController: UIViewController {
             .red, .green, .black, .orange, .blue, .white, .systemPink
         ]
         view.backgroundColor = colors.randomElement()
+        
+        view.addSubview(likeButton)
+        view.addSubview(commentButton)
+        view.addSubview(shareButton)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let size: CGFloat = 55
+        let yStart: CGFloat = view.height - (size * 4)
+        for (index, button) in [likeButton, commentButton, shareButton].enumerated() {
+            button.frame = CGRect(x: view.width - size - 5,
+                                  y: yStart + (CGFloat(index) * size),
+                                  width: size,
+                                  height: size)
+        }
     }
 }
