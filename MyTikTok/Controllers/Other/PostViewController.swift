@@ -15,6 +15,7 @@ class PostViewController: UIViewController {
         let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
         button.tintColor = .white
+        button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
     
@@ -22,6 +23,7 @@ class PostViewController: UIViewController {
         let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "text.bubble.fill"), for: .normal)
         button.tintColor = .white
+        button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
     
@@ -29,6 +31,7 @@ class PostViewController: UIViewController {
         let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.tintColor = .white
+        button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
     
@@ -48,9 +51,7 @@ class PostViewController: UIViewController {
         ]
         view.backgroundColor = colors.randomElement()
         
-        view.addSubview(likeButton)
-        view.addSubview(commentButton)
-        view.addSubview(shareButton)
+        setUpButtons()
     }
     
     override func viewDidLayoutSubviews() {
@@ -59,10 +60,32 @@ class PostViewController: UIViewController {
         let size: CGFloat = 40
         let yStart: CGFloat = view.height - (size * 4) - 30 - view.safeAreaInsets.bottom - (tabBarController?.tabBar.height ?? 0)
         for (index, button) in [likeButton, commentButton, shareButton].enumerated() {
-            button.frame = CGRect(x: view.width - size - 5,
+            button.frame = CGRect(x: view.width - size - 10,
                                   y: yStart + (CGFloat(index) * 10) + (CGFloat(index) * size),
                                   width: size,
                                   height: size)
         }
+    }
+    
+    func setUpButtons() {
+        view.addSubview(likeButton)
+        view.addSubview(commentButton)
+        view.addSubview(shareButton)
+        
+        likeButton.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
+        commentButton.addTarget(self, action: #selector(didTapComment), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(didTapShare), for: .touchUpInside)
+    }
+    
+    @objc private func didTapLike() {
+        
+    }
+    
+    @objc private func didTapComment() {
+        
+    }
+    
+    @objc private func didTapShare() {
+        
     }
 }
