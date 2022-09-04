@@ -56,11 +56,11 @@ class PostViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let size: CGFloat = 55
-        let yStart: CGFloat = view.height - (size * 4)
+        let size: CGFloat = 40
+        let yStart: CGFloat = view.height - (size * 4) - 30 - view.safeAreaInsets.bottom - (tabBarController?.tabBar.height ?? 0)
         for (index, button) in [likeButton, commentButton, shareButton].enumerated() {
             button.frame = CGRect(x: view.width - size - 5,
-                                  y: yStart + (CGFloat(index) * size),
+                                  y: yStart + (CGFloat(index) * 10) + (CGFloat(index) * size),
                                   width: size,
                                   height: size)
         }
