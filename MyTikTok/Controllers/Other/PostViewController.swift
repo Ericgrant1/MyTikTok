@@ -9,7 +9,7 @@ import UIKit
 
 class PostViewController: UIViewController {
     
-    let model: PostModel
+    var model: PostModel
     
     private let likeButton: UIButton = {
         let button = UIButton()
@@ -47,7 +47,7 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let colors: [UIColor] = [
-            .red, .green, .black, .orange, .blue, .white, .systemPink
+            .red, .green, .black, .orange, .blue, .systemPink
         ]
         view.backgroundColor = colors.randomElement()
         
@@ -78,14 +78,25 @@ class PostViewController: UIViewController {
     }
     
     @objc private func didTapLike() {
+        model.isLikedByCurrentUser = !model.isLikedByCurrentUser
         
+        likeButton.tintColor = model.isLikedByCurrentUser ? .systemRed : .white
     }
     
     @objc private func didTapComment() {
-        
+        // Present comment tray
     }
     
     @objc private func didTapShare() {
+        guard let url = URL(string: "https://www.tiktok.com") else {
+            return
+        }
         
+        let vc = UIActivityViewController(
+            activityItems: [url],
+            applicationActivities: []
+        )
+        
+        present(vc, animated: true)
     }
 }
