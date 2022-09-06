@@ -35,6 +35,8 @@ class PostViewController: UIViewController {
         return button
     }()
     
+    // MARK: - Init
+    
     init(model: PostModel) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -52,6 +54,7 @@ class PostViewController: UIViewController {
         view.backgroundColor = colors.randomElement()
         
         setUpButtons()
+        setUpDoubleTapToLike()
     }
     
     override func viewDidLayoutSubviews() {
@@ -98,5 +101,45 @@ class PostViewController: UIViewController {
         )
         
         present(vc, animated: true)
+    }
+    
+    func setUpDoubleTapToLike() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(_:)))
+        tap.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tap)
+        view.isUserInteractionEnabled = true
+    }
+    
+    @objc private func didDoubleTap(_ gesture: UITapGestureRecognizer) {
+        if !model.isLikedByCurrentUser {
+            model.isLikedByCurrentUser = true
+        }
+        
+        let touchPoint = gesture.location(in:  view)
+        let imageView = UIImageView(image: UIImage(systemName: "heart.fill"))
+        imageView.tintColor = .systemRed
+        imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        imageView.center = touchPoint
+        imageView.contentMode = .scaleAspectFit
+        imageView.alpha = 0
+        view.addSubview(imageView)
+        
+        UIView.animate(withDuration: 0.2) {
+            imageView.alpha = 1
+        } completion: { done in
+            if done {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    UIView.animate(withDuration: 0.4) {
+                        imageView.alpha = 0
+                    } completion: { done in
+                        if done {
+                            imageView.removeFromSuperview()
+                        }
+                    }
+
+                }
+            }
+            
+        }
     }
 }
