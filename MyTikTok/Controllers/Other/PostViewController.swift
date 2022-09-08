@@ -110,6 +110,7 @@ class PostViewController: UIViewController {
     }
     
     @objc private func didTapComment() {
+        (parent as? UIPageViewController)?.view.isUserInteractionEnabled = false
         let vc = CommentsViewController(post: model)
         addChild(vc)
         vc.didMove(toParent: self)
