@@ -110,7 +110,25 @@ class PostViewController: UIViewController {
     }
     
     @objc private func didTapComment() {
-        // Present comment tray
+        let vc = CommentsViewController(post: model)
+        addChild(vc)
+        vc.didMove(toParent: self)
+        view.addSubview(vc.view)
+        let frame: CGRect = CGRect(
+            x: 0,
+            y: view.height,
+            width: view.width,
+            height: view.height * 0.75
+        )
+        vc.view.frame = frame
+        UIView.animate(withDuration: 0.2) {
+            vc.view.frame = CGRect(
+                x: 0,
+                y: self.view.height - frame.height,
+                width: frame.width,
+                height: frame.height
+            )
+        }
     }
     
     @objc private func didTapShare() {

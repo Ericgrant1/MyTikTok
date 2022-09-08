@@ -30,6 +30,7 @@
 		52AF814628A5534B00A47290 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AF814528A5534B00A47290 /* Assets.xcassets */; };
 		52AF814928A5534B00A47290 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AF814728A5534B00A47290 /* LaunchScreen.storyboard */; };
 		52BE534328AA9D0000C85CDA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BE534228AA9D0000C85CDA /* Extensions.swift */; };
+		52E9C12328CA372C0060313E /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9C12228CA372C0060313E /* CommentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		52AF814828A5534B00A47290 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52AF814A28A5534B00A47290 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52BE534228AA9D0000C85CDA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		52E9C12228CA372C0060313E /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		CC3052DB4026AB0C49194DC0 /* Pods-MyTikTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTikTok.debug.xcconfig"; path = "Target Support Files/Pods-MyTikTok/Pods-MyTikTok.debug.xcconfig"; sourceTree = "<group>"; };
 		FF8F16D3932885207C5F5CB2 /* Pods-MyTikTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTikTok.release.xcconfig"; path = "Target Support Files/Pods-MyTikTok/Pods-MyTikTok.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,9 +96,9 @@
 		527839B528A5680300002C82 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				52AF814028A5534900A47290 /* HomeViewController.swift */,
-				527839B728A5688900002C82 /* ExploreViewController.swift */,
 				527839B928A568AB00002C82 /* CameraViewController.swift */,
+				527839B728A5688900002C82 /* ExploreViewController.swift */,
+				52AF814028A5534900A47290 /* HomeViewController.swift */,
 				527839BB28A568DA00002C82 /* NotificationsViewController.swift */,
 				527839BD28A568FD00002C82 /* ProfileViewController.swift */,
 				527839C728A569C800002C82 /* TabBarViewController.swift */,
@@ -112,6 +114,7 @@
 				527839C328A5696600002C82 /* SignUpViewController.swift */,
 				527839C528A5698A00002C82 /* SettingsViewController.swift */,
 				527839CB28A56A7A00002C82 /* PostViewController.swift */,
+				52E9C12228CA372C0060313E /* CommentsViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				527839C628A5698A00002C82 /* SettingsViewController.swift in Sources */,
 				527839CC28A56A7A00002C82 /* PostViewController.swift in Sources */,
 				527839BA28A568AB00002C82 /* CameraViewController.swift in Sources */,
+				52E9C12328CA372C0060313E /* CommentsViewController.swift in Sources */,
 				527839C828A569C800002C82 /* TabBarViewController.swift in Sources */,
 				52AF814128A5534900A47290 /* HomeViewController.swift in Sources */,
 				527839C428A5696600002C82 /* SignUpViewController.swift in Sources */,
